@@ -84,10 +84,10 @@ import { MaterialCommunityIcons as Icon} from 'react-native-vector-icons';
       //comprobar ganadores
       let winner = this.getWinner();
     if(winner == 1) {
-      Alert.alert("¡El jugador ☀ 1 es el ganador!");
+      Alert.alert("¡El jugador ☀ (1) es el ganador!");
       this.initializeGame(); // inicia nuevo juego automaticamente
     } else if (winner == -1) {
-      Alert.alert("¡El jugador ☽ 2 es el ganador!");
+      Alert.alert("¡El jugador ☽ (2) es el ganador!");
       this.initializeGame();
     } 
 }
@@ -107,6 +107,8 @@ import { MaterialCommunityIcons as Icon} from 'react-native-vector-icons';
     return (
       <View style={styles.container}>
             <Text style={{paddingBottom:30, color:'#c431f7', fontSize:45}}>Tic-Tac-Toe</Text>
+            <Text style={{paddingBottom:10, color:'#a3f702', fontSize:25}}>Jugador ☀ (1) </Text>
+            <Text style={{paddingBottom:10, color:'#a3f702', fontSize:25}}>Jugador ☽ (2) </Text>
          <View style={{flexDirection: "row"}}>
             <TouchableOpacity onPress={() => this.onTilePress(0,0)} style={[styles.title, {borderLeftWidth:0, borderTopWidth:0}]}> 
             {this.renderIcon(0,0)} 
@@ -141,8 +143,10 @@ import { MaterialCommunityIcons as Icon} from 'react-native-vector-icons';
             {this.renderIcon(2,2)}
             </TouchableOpacity>
          </View>
-         <View style={{paddingTop: 50}}/>
+         <View style={{paddingTop: 30}}/>
+         
         <Button style={styles.btn} title="Nueva Partida" onPress={this.onNewGamePress}/>
+        
     </View>
 
 
@@ -162,6 +166,8 @@ const styles = StyleSheet.create({
     width:100,
     height:100,
     borderColor: "#f70093",
+    alignItems: 'center',
+    justifyContent: 'center',
    
   },
   titleX: {
@@ -177,5 +183,3 @@ const styles = StyleSheet.create({
   },
 
 });
-
- 
